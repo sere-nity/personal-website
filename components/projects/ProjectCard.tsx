@@ -15,13 +15,23 @@ export default function ProjectCard({ project, isVisual = false }: ProjectCardPr
   if (isVisual) {
     return (
       <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-        <div className="relative aspect-video">
+        <div className="relative aspect-video group">
           <Image
             src={image || '/images/placeholder.jpg'}
             alt={title}
             fill
             className="object-cover"
           />
+          {demoUrl && (
+            <Link 
+              href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300"
+            >
+              <FaExternalLinkAlt className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={24} />
+            </Link>
+          )}
         </div>
         <div className="p-3">
           <h3 className="text-lg font-bold mb-1">
@@ -29,18 +39,6 @@ export default function ProjectCard({ project, isVisual = false }: ProjectCardPr
               {title}
             </Link>
           </h3>
-          <div className="flex gap-1.5">
-            {demoUrl && (
-              <Link 
-                href={demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-purple-600 hover:text-purple-700 transition-colors"
-              >
-                <FaExternalLinkAlt size={14} />
-              </Link>
-            )}
-          </div>
         </div>
       </div>
     );

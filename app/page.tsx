@@ -50,7 +50,7 @@ export default async function Home() {
         </section>
 
         <section id="projects" className="mb-16 scroll-mt-20">
-          <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Featured Projects</h2>
+          <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Passion Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
             {projects
               .filter(project => project.frontmatter.category === 'visual')

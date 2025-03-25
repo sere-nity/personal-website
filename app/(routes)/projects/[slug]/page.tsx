@@ -96,7 +96,7 @@ export default async function ProjectPage({ params }: Props) {
             {youtubeVideoId ? (
               <YouTubeEmbed videoId={youtubeVideoId} />
             ) : project.frontmatter.image && (
-              <div className="relative w-full h-[500px]">
+              <div className="relative w-full h-[500px] group">
                 <Image
                   src={project.frontmatter.image}
                   alt={project.frontmatter.title}
@@ -104,6 +104,16 @@ export default async function ProjectPage({ params }: Props) {
                   className="object-cover rounded-lg"
                   priority
                 />
+                {project.frontmatter.demoUrl && (
+                  <Link
+                    href={project.frontmatter.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300"
+                  >
+                    <FaExternalLinkAlt className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={32} />
+                  </Link>
+                )}
               </div>
             )}
           </header>
