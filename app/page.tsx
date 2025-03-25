@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <main className="container mx-auto px-4 py-12">
       <div className="max-w-6xl mx-auto">
-        <section id="about" className="mb-16">
+        <section id="about" className="mb-16 scroll-mt-20">
           <div className="flex flex-col md:flex-row items-center gap-12 mb-16">
             <div className="md:w-1/3">
               <div className="relative w-64 h-64 border-4 border-purple-600 rounded-full">
@@ -43,7 +43,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section id="projects" className="mb-16">
+        <section id="projects" className="mb-16 scroll-mt-20">
           <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {projects.map((project) => (
@@ -52,7 +52,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section id="experience" className="mb-16">
+        <section id="experience" className="mb-16 scroll-mt-20">
           <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Experience</h2>
           <div className="space-y-8">
             <div className="border-l-4 border-purple-600 pl-4">
@@ -82,7 +82,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section id="education" className="mb-16">
+        <section id="education" className="mb-16 scroll-mt-20">
           <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Education</h2>
           <div className="space-y-8">
             <div className="border-l-4 border-purple-600 pl-4">
@@ -112,7 +112,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section id="skills" className="mb-16">
+        <section id="skills" className="mb-16 scroll-mt-20">
           <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Technical Skills</h2>
           <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2">
             {['Haskell', 'Kotlin', 'SQL', 'Scala', 'Git', 'Unix', 'C#', 'C', 'Java', 'Python', 'Prolog', 'Lua', 'Unity VCS', 'Docker', 'HTML', 'CSS', 'JavaScript', 'Vercel', 'Firebase'].map((skill) => (
