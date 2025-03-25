@@ -14,7 +14,7 @@ export default function Introduction() {
         Serene Liu
       </h1>
       <p className="text-xl text-gray-600 mb-4 font-light">
-        Passionate about Problem-Solving with Creativity and Tech
+        A Second Year Imperial Computing Student Passionate about Problem-Solving with Creativity and Tech
       </p>
       <div className="flex justify-center gap-4 text-sm">
         <a
