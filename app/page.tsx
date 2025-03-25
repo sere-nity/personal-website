@@ -14,7 +14,7 @@ export default async function Home() {
 
         <section className="mb-16">
           <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {projects.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
@@ -23,9 +23,9 @@ export default async function Home() {
 
         <section className="mb-16">
           <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Technical Skills</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2">
             {['Haskell', 'Kotlin', 'SQL', 'Scala', 'Git', 'Unix', 'C#', 'C', 'Java', 'Python', 'Prolog', 'Lua', 'Unity VCS', 'Docker'].map((skill) => (
-              <div key={skill} className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-purple-200 transition-colors font-light">
+              <div key={skill} className="bg-white p-2 rounded-lg shadow-sm border border-gray-100 hover:border-purple-200 transition-colors font-light text-sm">
                 {skill}
               </div>
             ))}
@@ -34,17 +34,17 @@ export default async function Home() {
 
         <section>
           <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Creative Skills</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-purple-200 transition-colors">
-              <h3 className="font-poppins font-semibold mb-2">Video Production</h3>
-              <p className="font-light">YouTube (Vlogging): Premiere Pro</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100 hover:border-purple-200 transition-colors">
+              <h3 className="font-poppins font-semibold mb-1.5 text-base">Video Production</h3>
+              <p className="font-light text-sm">YouTube (Vlogging): Premiere Pro</p>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-purple-200 transition-colors">
-              <h3 className="font-poppins font-semibold mb-2">Animation & Graphics</h3>
-              <p className="font-light">Animation: After Effects</p>
-              <p className="font-light">Digital Art: Photoshop</p>
-              <p className="font-light">3D-modelling: Blender</p>
-              <p className="font-light">Shaders: GLSL, Shaderlab</p>
+            <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100 hover:border-purple-200 transition-colors">
+              <h3 className="font-poppins font-semibold mb-1.5 text-base">Animation & Graphics</h3>
+              <p className="font-light text-sm">Animation: After Effects</p>
+              <p className="font-light text-sm">Digital Art: Photoshop</p>
+              <p className="font-light text-sm">3D-modelling: Blender</p>
+              <p className="font-light text-sm">Shaders: GLSL, Shaderlab</p>
             </div>
           </div>
         </section>

@@ -8,13 +8,13 @@ export default function Introduction() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="text-center mb-12"
+      className="text-center mb-8"
     >
-      <h1 className="font-poppins text-4xl md:text-6xl font-bold mb-6 text-purple-600 tracking-tight">
+      <h1 className="font-poppins text-3xl md:text-4xl font-bold mb-4 text-purple-600 tracking-tight">
         Serene Liu
       </h1>
-      <p className="text-xl text-gray-600 mb-4 font-light">
-        A Second Year Imperial Computing Student Passionate about Problem-Solving with Creativity and Tech
+      <p className="text-lg text-gray-600 mb-3 font-light">
+        An Imperial Computing Student Passionate about Problem-Solving with Creativity and Tech
       </p>
       <div className="flex justify-center gap-4 text-sm">
         <a
