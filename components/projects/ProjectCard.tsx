@@ -27,10 +27,8 @@ export default function ProjectCard({ project, isVisual = false }: ProjectCardPr
               href={demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300"
-            >
-              <FaExternalLinkAlt className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={24} />
-            </Link>
+              className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300"
+            />
           )}
         </div>
         <div className="p-3">
@@ -39,6 +37,16 @@ export default function ProjectCard({ project, isVisual = false }: ProjectCardPr
               {title}
             </Link>
           </h3>
+          <div className="flex flex-wrap gap-1.5">
+            {tags.slice(0, 3).map(tag => (
+              <span 
+                key={tag} 
+                className="text-[10px] px-1.5 py-0.5 bg-purple-100 text-purple-800 rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     );
