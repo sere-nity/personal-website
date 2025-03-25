@@ -8,6 +8,10 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        poppins: ['var(--font-poppins)', 'sans-serif'],
+      },
       typography: {
         DEFAULT: {
           css: {
@@ -25,4 +29,4 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
   ],
-} 
+}
