@@ -31,6 +31,12 @@ export default async function Home() {
               </p>
               <div className="flex justify-center md:justify-start gap-4">
                 <Link
+                  href="mailto:serene6197@gmail.com"
+                  className="text-gray-600 hover:text-purple-600"
+                >
+                  serene6197@gmail.com
+                </Link>
+                <Link
                   href="https://www.linkedin.com/in/serene-q-liu/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -90,6 +96,13 @@ export default async function Home() {
                 using the Stone Soup framework in Python.
               </p>
             </div>
+            <div className="border-l-4 border-purple-600 pl-4">
+              <h3 className="text-lg font-semibold">Market Researcher</h3>
+              <p className="text-sm text-gray-600">DXB Perfume • Jul 2023 - Jul 2023</p>
+              <p className="mt-2 text-sm">
+                Part-time market research position at DXB Perfume in Bradford, England.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -110,6 +123,13 @@ export default async function Home() {
               <p className="text-sm text-gray-600">A-Levels & Pre-U • 2021 - 2023</p>
               <p className="mt-2 text-sm">
                 Maths (A*), Further Maths (A*), Physics (D1/A** eq.), Chemistry (D2/A* eq.)
+              </p>
+            </div>
+            <div className="border-l-4 border-purple-600 pl-4">
+              <h3 className="text-lg font-semibold">Bradford Grammar School</h3>
+              <p className="text-sm text-gray-600">Secondary Education • Sep 2011 - Jul 2021</p>
+              <p className="mt-2 text-sm">
+                Grade: 11 9s, 1 A* (2018)
               </p>
             </div>
             <div className="border-l-4 border-purple-600 pl-4">
