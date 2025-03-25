@@ -1,6 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export default function AboutPage() {
   return (
@@ -23,14 +25,14 @@ export default function AboutPage() {
           <div className="md:w-2/3 text-center md:text-left">
             <h1 className="text-4xl font-bold mb-4">About Me</h1>
             <p className="text-xl text-gray-600 mb-6">
-              A passionate web developer crafting beautiful and functional digital experiences.
+              Passionate about Problem-Solving with Creativity and Tech
             </p>
             <div className="flex justify-center md:justify-start gap-4">
               <Link
                 href="https://github.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600"
+                className="text-gray-600 hover:text-purple-600"
               >
                 <FaGithub size={24} />
               </Link>
@@ -38,82 +40,40 @@ export default function AboutPage() {
                 href="https://linkedin.com/in/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600"
+                className="text-gray-600 hover:text-purple-600"
               >
                 <FaLinkedin size={24} />
-              </Link>
-              <Link
-                href="https://twitter.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600"
-              >
-                <FaTwitter size={24} />
               </Link>
             </div>
           </div>
         </div>
 
-        {/* Bio Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6">My Journey</h2>
-          <div className="prose max-w-none">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-              eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
-              in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-        </section>
-
-        {/* Skills Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6">Skills & Technologies</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              'JavaScript/TypeScript',
-              'React.js',
-              'Next.js',
-              'Node.js',
-              'Tailwind CSS',
-              'PostgreSQL',
-              'GraphQL',
-              'AWS',
-              'Git'
-            ].map((skill) => (
-              <div
-                key={skill}
-                className="bg-gray-100 rounded-lg p-4 text-center"
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Experience Section */}
         <section className="mb-16">
           <h2 className="text-2xl font-bold mb-6">Experience</h2>
           <div className="space-y-8">
-            <div className="border-l-4 border-blue-600 pl-4">
-              <h3 className="text-xl font-semibold">Senior Web Developer</h3>
-              <p className="text-gray-600">Company Name • 2020 - Present</p>
+            <div className="border-l-4 border-purple-600 pl-4">
+              <h3 className="text-xl font-semibold">DoCSoC Events Officer</h3>
+              <p className="text-gray-600">Imperial Department of Computing Society • Oct 2024 - Present</p>
               <p className="mt-2">
-                Led development of multiple web applications using React and Node.js.
-                Implemented CI/CD pipelines and improved performance metrics by 40%.
+                Elected for Imperial Department of Computing Society's Events Officer Role. 
+                Helped run both large and small events including IC Hack 25.
               </p>
             </div>
-            <div className="border-l-4 border-blue-600 pl-4">
-              <h3 className="text-xl font-semibold">Web Developer</h3>
-              <p className="text-gray-600">Previous Company • 2018 - 2020</p>
+            <div className="border-l-4 border-purple-600 pl-4">
+              <h3 className="text-xl font-semibold">PlayStation Work Experience</h3>
+              <p className="text-gray-600">Sony Interactive Entertainment London UK • Aug 2023 - Sep 2023</p>
               <p className="mt-2">
-                Developed and maintained client websites using modern JavaScript frameworks.
-                Collaborated with designers to implement responsive designs.
+                Learnt shader coding with GLSL + Shadertoy and utilisation of Unity's Render Pipeline 
+                to create stylized graphic effects.
+              </p>
+            </div>
+            <div className="border-l-4 border-purple-600 pl-4">
+              <h3 className="text-xl font-semibold">Accio Research Contractor</h3>
+              <p className="text-gray-600">Remote • Jul 2023</p>
+              <p className="mt-2">
+                Built a model for smooth interpolation between two known positions of a football player 
+                using the Stone Soup framework in Python.
               </p>
             </div>
           </div>
@@ -123,12 +83,28 @@ export default function AboutPage() {
         <section>
           <h2 className="text-2xl font-bold mb-6">Education</h2>
           <div className="space-y-8">
-            <div className="border-l-4 border-blue-600 pl-4">
-              <h3 className="text-xl font-semibold">Bachelor of Computer Science</h3>
-              <p className="text-gray-600">University Name • 2014 - 2018</p>
+            <div className="border-l-4 border-purple-600 pl-4">
+              <h3 className="text-xl font-semibold">Imperial College London</h3>
+              <p className="text-gray-600">Computing BEng • 2023 - Present</p>
               <p className="mt-2">
-                Focused on web technologies and software engineering principles.
-                Graduated with honors.
+                First Year (1:1) (79.75%) <br />
+                Relevant Modules: Computer Architecture, Functional Programming, 
+                Compilers, Object Oriented Programming
+              </p>
+            </div>
+            <div className="border-l-4 border-purple-600 pl-4">
+              <h3 className="text-xl font-semibold">Westminster School</h3>
+              <p className="text-gray-600">A-Levels & Pre-U • 2021 - 2023</p>
+              <p className="mt-2">
+                Maths (A*), Further Maths (A*), Physics (D1/A** eq.), Chemistry (D2/A* eq.)
+              </p>
+            </div>
+            <div className="border-l-4 border-purple-600 pl-4">
+              <h3 className="text-xl font-semibold">Junior Royal Northern College Of Music</h3>
+              <p className="text-gray-600">2018 - 2021</p>
+              <p className="mt-2">
+                DipABRSM Piano (Distinction) <br />
+                Grade 8 Piano, Oboe, Organ and Violin (All Distinctions + Merit)
               </p>
             </div>
           </div>
