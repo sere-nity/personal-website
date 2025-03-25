@@ -24,7 +24,7 @@ export default async function Home() {
         <section className="mb-16">
           <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Technical Skills</h2>
           <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2">
-            {['Haskell', 'Kotlin', 'SQL', 'Scala', 'Git', 'Unix', 'C#', 'C', 'Java', 'Python', 'Prolog', 'Lua', 'Unity VCS', 'Docker'].map((skill) => (
+            {['Haskell', 'Kotlin', 'SQL', 'Scala', 'Git', 'Unix', 'C#', 'C', 'Java', 'Python', 'Prolog', 'Lua', 'Unity VCS', 'Docker', 'HTML', 'CSS', 'JavaScript', 'Vercel', 'Firebase'].map((skill) => (
               <div key={skill} className="bg-white p-2 rounded-lg shadow-sm border border-gray-100 hover:border-purple-200 transition-colors font-light text-sm">
                 {skill}
               </div>
