@@ -25,7 +25,7 @@ export default function AboutPage() {
           <div className="md:w-2/3 text-center md:text-left">
             <h1 className="text-4xl font-bold mb-4">About Me</h1>
             <p className="text-xl text-gray-600 mb-6">
-              Passionate about Problem-Solving with Creativity and Tech
+              Hi! I'm a second year Computer Science student at Imperial College London.
             </p>
             <div className="flex justify-center md:justify-start gap-4">
               {/* <Link

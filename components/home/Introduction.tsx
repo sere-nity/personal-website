@@ -23,13 +23,13 @@ export default function Introduction() {
         >
           serene6197@gmail.com
         </a>
-        <span className="text-gray-400">|</span>
+        {/* <span className="text-gray-400">|</span>
         <a
           href="tel:+447403523182"
           className="text-gray-600 hover:text-purple-600 transition-colors"
         >
           +447403523182
-        </a>
+        </a> */}
       </div>
     </motion.div>
   );
