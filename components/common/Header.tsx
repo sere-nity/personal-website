@@ -6,8 +6,11 @@ import { usePathname } from 'next/navigation';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 const navLinks = [
-  { name: 'About', path: '/about' },
-  { name: 'Projects', path: '/projects' },
+  { name: 'About', path: '#about' },
+  { name: 'Projects', path: '#projects' },
+  { name: 'Experience', path: '#experience' },
+  { name: 'Education', path: '#education' },
+  { name: 'Skills', path: '#skills' },
 ];
 
 export default function Header() {

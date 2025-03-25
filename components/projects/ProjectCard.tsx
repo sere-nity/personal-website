@@ -24,13 +24,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
         
-        <h3 className="text-base font-bold mb-1">
+        <h3 className="text-lg font-bold mb-1">
           <Link href={`/projects/${slug}`} className="hover:text-purple-600 transition-colors">
             {title}
           </Link>
         </h3>
         
-        <p className="text-gray-600 text-xs font-light mb-2">
+        <p className="text-gray-600 text-sm font-light mb-2">
           {description}
         </p>
 
