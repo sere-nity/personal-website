@@ -17,9 +17,10 @@ export interface BlogPost {
       date: string;
       description: string;
       tags: string[];
-      image: string;
+      image?: string;
       demoUrl?: string;
       githubUrl?: string;
+      category: 'visual' | 'technical';
     };
     content: React.ReactNode;
   }

@@ -1,14 +1,50 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { Project } from '@/lib/types';
 
 interface ProjectCardProps {
   project: Project;
+  isVisual?: boolean;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, isVisual = false }: ProjectCardProps) {
   const { slug, frontmatter } = project;
-  const { title, description, tags, demoUrl, githubUrl } = frontmatter;
+  const { title, description, tags, demoUrl, githubUrl, image } = frontmatter;
+  
+  if (isVisual) {
+    return (
+      <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        <div className="relative aspect-video">
+          <Image
+            src={image || '/images/placeholder.jpg'}
+            alt={title}
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-3">
+          <h3 className="text-lg font-bold mb-1">
+            <Link href={`/projects/${slug}`} className="hover:text-purple-600 transition-colors">
+              {title}
+            </Link>
+          </h3>
+          <div className="flex gap-1.5">
+            {demoUrl && (
+              <Link 
+                href={demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-600 hover:text-purple-700 transition-colors"
+              >
+                <FaExternalLinkAlt size={14} />
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
   
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
