@@ -13,7 +13,7 @@ export default function Footer() {
           </div>
           
           <div className="flex space-x-6">
-            <Link 
+            {/* <Link 
               href="https://github.com/yourusername" 
               target="_blank"
               rel="noopener noreferrer"
@@ -28,9 +28,9 @@ export default function Footer() {
               className="text-gray-600 hover:text-blue-600 transition-colors"
             >
               <FaTwitter size={20} />
-            </Link>
+            </Link> */}
             <Link 
-              href="https://linkedin.com/in/yourusername" 
+              href="https://www.linkedin.com/in/serene-q-liu/" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-blue-600 transition-colors"
