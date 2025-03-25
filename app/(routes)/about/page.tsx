@@ -13,7 +13,7 @@ export default function AboutPage() {
           <div className="md:w-1/3">
             <div className="relative w-64 h-64">
               <Image
-                src="https://picsum.photos/400/400"
+                src="/images/PFPic.jpg"
                 alt="Profile"
                 fill
                 className="rounded-full object-cover"
@@ -28,14 +28,14 @@ export default function AboutPage() {
               Passionate about Problem-Solving with Creativity and Tech
             </p>
             <div className="flex justify-center md:justify-start gap-4">
-              <Link
+              {/* <Link
                 href="https://github.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-purple-600"
               >
                 <FaGithub size={24} />
-              </Link>
+              </Link> */}
               <Link
                 href="https://linkedin.com/in/yourusername"
                 target="_blank"
