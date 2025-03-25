@@ -19,10 +19,15 @@ export async function generateStaticParams() {
   }));
 }
 
-function getYouTubeVideoId(url: string) {
+function getYouTubeVideoId(url: string | undefined): string | null {
+  if (!url) return null;
   const regex = /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/;
   const matches = url.match(regex);
   return matches ? matches[1] : null;
+}
+
+function isYouTubeUrl(url: string | undefined): boolean {
+  return typeof url === 'string' && (url.includes('youtu.be') || url.includes('youtube.com'));
 }
 
 export default async function ProjectPage({ params }: Props) {
@@ -33,10 +38,8 @@ export default async function ProjectPage({ params }: Props) {
       notFound();
     }
 
-    const isYouTubeProject = project.slug === 'youtube-lifestyle-vlog';
-    const youtubeVideoId = isYouTubeProject && project.frontmatter.demoUrl 
-      ? getYouTubeVideoId(project.frontmatter.demoUrl)
-      : null;
+    const hasYouTubeVideo = project.frontmatter.demoUrl && isYouTubeUrl(project.frontmatter.demoUrl);
+    const youtubeVideoId = hasYouTubeVideo ? getYouTubeVideoId(project.frontmatter.demoUrl) : null;
 
     return (
       <article className="container mx-auto px-4 py-12">
@@ -61,7 +64,7 @@ export default async function ProjectPage({ params }: Props) {
                   </Link>
                 )}
                 
-                {project.frontmatter.demoUrl && !isYouTubeProject && (
+                {project.frontmatter.demoUrl && !hasYouTubeVideo && (
                   <Link
                     href={project.frontmatter.demoUrl}
                     target="_blank"
