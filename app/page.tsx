@@ -1,56 +1,38 @@
-"use client";
+import { getBlogPosts, getProjects } from '@/lib/mdx';
+import Hero from '@/components/home/Hero';
+import FeaturedContent from '@/components/home/FeaturedContent';
 
-import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/lib/firebase/firebase"; // Adjust path if needed
-import ProjectComponent from "../components/ProjectComponent";
-import { ProjectType } from "../types/project";
-
-export default function PortfolioPage() {
-  const [projects, setProjects] = useState<ProjectType[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "projects"));
-        const projectsData = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        })) as ProjectType[];
-        
-        setProjects(projectsData);
-      } catch (error) {
-        console.error("Error fetching projects:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProjects();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900"></div>
-      </div>
-    );
-  }
-
+export default async function Home() {
+  const allPosts = await getBlogPosts();
+  const allProjects = await getProjects();
+  
+  // Get the latest 3 posts and projects
+  const featuredPosts = allPosts.slice(0, 3);
+  const featuredProjects = allProjects.slice(0, 3);
+  
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-8 text-center">My Projects</h1>
+    <main className="min-h-screen">
+      <Hero />
       
-      {projects.length === 0 ? (
-        <p className="text-center text-gray-500">No projects found.</p>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <ProjectComponent key={project.id} project={project} />
-          ))}
-        </div>
-      )}
-    </div>
+      <div className="container mx-auto px-4 py-12 space-y-20">
+        <FeaturedContent 
+          title="Featured Projects"
+          description="Check out some of my recent work"
+          items={featuredProjects}
+          type="project"
+          linkText="View All Projects"
+          linkHref="/projects"
+        />
+        
+        <FeaturedContent 
+          title="Latest Blog Posts"
+          description="Thoughts, tutorials, and insights"
+          items={featuredPosts}
+          type="blog"
+          linkText="View All Posts"
+          linkHref="/blog"
+        />
+      </div>
+    </main>
   );
 }
