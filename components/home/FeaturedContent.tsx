@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import BlogCard from '@/components/blog/BlogCard';
 import ProjectCard from '@/components/projects/ProjectCard';
 import { BlogPost, Project } from '@/lib/types';
 
