@@ -96,13 +96,6 @@ export default async function Home() {
                 using the Stone Soup framework in Python.
               </p>
             </div>
-            <div className="border-l-4 border-purple-600 pl-4">
-              <h3 className="text-lg font-semibold">Market Researcher</h3>
-              <p className="text-sm text-gray-600">DXB Perfume • Jul 2023 - Jul 2023</p>
-              <p className="mt-2 text-sm">
-                Part-time market research position at DXB Perfume in Bradford, England.
-              </p>
-            </div>
           </div>
         </section>
 
