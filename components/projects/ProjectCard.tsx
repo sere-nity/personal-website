@@ -22,14 +22,10 @@ export default function ProjectCard({ project, isVisual = false }: ProjectCardPr
             fill
             className="object-cover"
           />
-          {demoUrl && (
-            <Link 
-              href={demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300"
-            />
-          )}
+          <Link 
+            href={`/projects/${slug}`}
+            className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300"
+          />
         </div>
         <div className="p-3">
           <h3 className="text-lg font-bold mb-1">
