@@ -130,18 +130,6 @@ export default function Home() {
             <div className="text-gray-500 text-[18px] mb-2">Hello</div>
             <div className="space-y-4 text-black text-[16px]">
               <p>
-                I'm currently building{' '}
-                <a 
-                  href="https://gliahq.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="underline hover:no-underline text-black"
-                >
-                  glia
-                </a>
-                .
-              </p>
-              <p>
                 My lifelong passion is bringing ideas to life.
               </p>
               <p>
