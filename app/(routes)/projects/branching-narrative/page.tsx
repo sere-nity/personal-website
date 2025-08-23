@@ -42,7 +42,7 @@ export default function BranchingNarrativePage() {
           <div>
             <div className="text-gray-500 text-[18px] mb-2">Project</div>
             <div className="text-black text-[16px]">
-              Dynamic Storytelling
+              Branching Narrative System
             </div>
           </div>
 

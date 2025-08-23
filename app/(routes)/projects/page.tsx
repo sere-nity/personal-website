@@ -38,11 +38,6 @@ export default function ProjectsPage() {
         title: 'WACC Compiler',
         description: 'Translates WACC language into machine code',
         link: 'https://github.com/sere-nity/wacc-compiler'
-      },
-      {
-        title: 'Branching Narrative System',
-        description: 'Disco Elysium\'s narrative system technically speaking.',
-        link: '/projects/branching-narrative'
       }
     ],
     'in-between': [
@@ -60,6 +55,11 @@ export default function ProjectsPage() {
         title: 'Living Painting',
         description: 'Painting that responds to dynamic lighting in real time.',
         link: 'https://app.milanote.com/1SRXzL1IgMiN95?p=GGM6yLSOb1h'
+      },
+      {
+        title: 'Branching Narrative System',
+        description: 'Disco Elysium\'s narrative system technically speaking.',
+        link: '/projects/branching-narrative'
       },
       {
         title: 'Animated Educational Video',
