@@ -1,168 +1,176 @@
-import { getProjects } from '@/lib/mdx';
-import ProjectCard from '@/components/projects/ProjectCard';
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaLinkedin } from 'react-icons/fa';
+'use client';
 
-export default async function Home() {
-  const projects = await getProjects();
+import { useState } from 'react';
+import Link from 'next/link';
+
+type ContentType = 'contact' | 'education' | 'experiences' | 'skills';
+
+export default function Home() {
+  const [selectedContent, setSelectedContent] = useState<ContentType>('contact');
+
+  const contentData = {
+    contact: {
+      title: 'Contact',
+      content: 'serene@gliahq.com'
+    },
+    education: {
+      title: 'Education',
+      content: (
+        <div className="space-y-4">
+          <div>
+            <div className="text-black">Imperial College London</div>
+            <div className="text-gray-500">(2023-Present)</div>
+            <div className="text-gray-600 italic">Computing</div>
+          </div>
+          <div>
+            <div className="text-black">Westminster School</div>
+            <div className="text-gray-500">(2021-23)</div>
+            <div className="text-gray-600 italic">Maths + Further Maths, Chemistry, Physics</div>
+          </div>
+          <div>
+            <div className="text-black">Royal Northern College of Music</div>
+            <div className="text-gray-500">(2021-23)</div>
+            <div className="text-gray-600 italic">Piano, Oboe, Violin, Organ</div>
+            <div className="text-gray-500">Grade 8+</div>
+          </div>
+        </div>
+      )
+    },
+    experiences: {
+      title: 'Experiences',
+      content: (
+        <div className="space-y-4">
+          <div>
+            <div className="text-black">Glia HQ <span className="text-gray-500">(Present)</span></div>
+            <div className="text-gray-600 italic">Co-Founder & CTO</div>
+          </div>
+          <div>
+            <div className="text-black">DoCSoc <span className="text-gray-500">(2024)</span></div>
+            <div className="text-gray-600 italic">Events Officer</div>
+          </div>
+          <div>
+            <div className="text-black">PlayStation <span className="text-gray-500">(2023)</span></div>
+            <div className="text-gray-600 italic">Graphics Intern</div>
+          </div>
+          <div>
+            <div className="text-black">Accio Research <span className="text-gray-500">(2022)</span></div>
+            <div className="text-gray-600 italic">Software Engineer</div>
+          </div>
+        </div>
+      )
+    },
+    skills: {
+      title: 'Skills',
+      content: 'Haskell, Kotlin, SQL, Scala, Git, Unity, C#, Java, Python, Video Production, Animation'
+    }
+  };
+
+  const handleContentClick = (type: ContentType) => {
+    setSelectedContent(type);
+  };
 
   return (
-    <main className="container mx-auto px-4 py-12">
-      <div className="max-w-6xl mx-auto">
-        <section id="about" className="mb-16 scroll-mt-20">
-          <div className="flex flex-col md:flex-row items-center gap-12 mb-16">
-            <div className="md:w-1/3">
-              <div className="relative w-64 h-64 border-4 border-purple-600 rounded-full">
-                <Image
-                  src="/images/PFPic.jpg"
-                  alt="Profile"
-                  fill
-                  className="rounded-full object-cover"
-                  priority
-                />
-              </div>
-            </div>
-            
-            <div className="md:w-2/3 text-center md:text-left">
-              <h1 className="text-4xl font-bold mb-4">Serene Liu</h1>
-              <p className="text-lg text-gray-600 mb-6">
-                Hi! I'm a second year Computer Science student at Imperial College London.
-              </p>
-              <div className="flex justify-center md:justify-start gap-4">
-                <Link
-                  href="mailto:serene6197@gmail.com"
-                  className="text-gray-600 hover:text-purple-600"
+    <main className="min-h-screen bg-white">
+      <div className="max-w-4xl mx-auto px-8 py-12">
+        {/* Name */}
+        <h1 className="text-[62px] mb-2">
+          <button 
+            onClick={() => setSelectedContent('contact')}
+            className="hover:text-gray-700"
+          >
+            Serene Liu
+          </button>
+        </h1>
+        <hr className="border-gray-300 mb-4" />
+        
+                {/* Subtitle, Navigation, and Age */}
+        <div className="grid grid-cols-[1fr_1fr] gap-4 mb-12">
+          <div className="text-gray-500 text-[16px] max-w-[300px]">
+            <div>Building at the Intersection</div>
+            <div>of Creativity and Tech</div>
+          </div>
+          <div className="flex justify-between items-start">
+            <nav className="text-left">
+              <div className="text-black text-[16px]">
+                <button 
+                  onClick={() => setSelectedContent('contact')}
+                  className="hover:text-gray-700"
                 >
-                  serene6197@gmail.com
-                </Link>
+                  About
+                </button>
+              </div>
+              <div className="text-black text-[16px]">
+                <Link href="/projects" className="hover:text-gray-700">Projects</Link>
+              </div>
+            </nav>
+            <div className="text-right">
+              <div className="text-gray-500 text-[16px]">
+                <Link href="/projects/camellia" className="hover:text-gray-700">Camellia</Link>
+              </div>
+              <div className="text-gray-500 text-[16px]">
+                <Link href="/projects/branching-narrative" className="hover:text-gray-700">Dynamic Storytelling</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr className="border-gray-300 mt-8 mb-4" />
+
+        {/* Main Content Section */}
+        <div className="grid grid-cols-[1fr_1fr] gap-4">
+          {/* Left Column - Dynamic Content */}
+          <div>
+            <div className="text-gray-500 text-[18px] mb-2">
+              {contentData[selectedContent].title}
+            </div>
+            <div className="text-black text-[16px]">
+              {contentData[selectedContent].content}
+            </div>
+          </div>
+
+          {/* Right Column - About Text */}
+          <div>
+            <div className="text-gray-500 text-[18px] mb-2">Hello</div>
+            <div className="space-y-4 text-black text-[16px]">
+              <p>
+                My lifelong passion is bringing ideas to life.
+              </p>
+              <p>
+                I've experimented with many mediums; video games, videos, music, writing and of course, software. You can see the results{' '}
                 <Link
-                  href="https://www.linkedin.com/in/serene-q-liu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-purple-600"
+                  href="/projects"
+                  className="underline hover:no-underline text-black"
                 >
-                  <FaLinkedin size={24} />
+                  here
                 </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+              </p>
+              <p>
+                I'm privileged to have an incredible{' '}
+                <button
+                  onClick={() => handleContentClick('education')}
+                  className={`underline hover:no-underline ${
+                    selectedContent === 'education' ? 'text-gray-500' : 'text-black'
+                  }`}
+                >
+                  education
+                </button>
+                , as well as{' '}
+                <button
+                  onClick={() => handleContentClick('experiences')}
+                  className={`underline hover:no-underline ${
+                    selectedContent === 'experiences' ? 'text-gray-500' : 'text-black'
+                  }`}
+                >
+                  experiences
+                </button>
+                {' '}working with people.
+              </p>
 
-        <section id="projects" className="mb-16 scroll-mt-20">
-          <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Passion Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
-            {projects
-              .filter(project => project.frontmatter.category === 'visual')
-              .map((project) => (
-                <ProjectCard key={project.slug} project={project} isVisual={true} />
-              ))}
-          </div>
-
-          <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Technical Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {projects
-              .filter(project => project.frontmatter.category === 'technical')
-              .map((project) => (
-                <ProjectCard key={project.slug} project={project} />
-              ))}
-          </div>
-        </section>
-
-        <section id="experience" className="mb-16 scroll-mt-20">
-          <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Experience</h2>
-          <div className="space-y-8">
-            <div className="border-l-4 border-purple-600 pl-4">
-              <h3 className="text-lg font-semibold">DoCSoC Events Officer</h3>
-              <p className="text-sm text-gray-600">Imperial Department of Computing Society • Oct 2024 - Present</p>
-              <p className="mt-2 text-sm">
-                Elected for Imperial Department of Computing Society's Events Officer Role. 
-                Helped run both large and small events including IC Hack 25.
-              </p>
-            </div>
-            <div className="border-l-4 border-purple-600 pl-4">
-              <h3 className="text-lg font-semibold">PlayStation Work Experience</h3>
-              <p className="text-sm text-gray-600">Sony Interactive Entertainment London UK • Aug 2023 - Sep 2023</p>
-              <p className="mt-2 text-sm">
-                Learnt shader coding with GLSL + Shadertoy and utilisation of Unity's Render Pipeline 
-                to create stylized graphic effects.
-              </p>
-            </div>
-            <div className="border-l-4 border-purple-600 pl-4">
-              <h3 className="text-lg font-semibold">Accio Research Contractor</h3>
-              <p className="text-sm text-gray-600">Remote • Jul 2023</p>
-              <p className="mt-2 text-sm">
-                Built a model for smooth interpolation between two known positions of a football player 
-                using the Stone Soup framework in Python.
+              <p>
+                Above all, I hope what I create means something to someone.
               </p>
             </div>
           </div>
-        </section>
-
-        <section id="education" className="mb-16 scroll-mt-20">
-          <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Education</h2>
-          <div className="space-y-8">
-            <div className="border-l-4 border-purple-600 pl-4">
-              <h3 className="text-lg font-semibold">Imperial College London</h3>
-              <p className="text-sm text-gray-600">Computing BEng • 2023 - Present</p>
-              <p className="mt-2 text-sm">
-                First Year (1:1) (79.75%) <br />
-                Relevant Modules: Computer Architecture, Functional Programming, 
-                Compilers, Object Oriented Programming
-              </p>
-            </div>
-            <div className="border-l-4 border-purple-600 pl-4">
-              <h3 className="text-lg font-semibold">Westminster School</h3>
-              <p className="text-sm text-gray-600">A-Levels & Pre-U • 2021 - 2023</p>
-              <p className="mt-2 text-sm">
-                Maths (A*), Further Maths (A*), Physics (D1/A** eq.), Chemistry (D2/A* eq.)
-              </p>
-            </div>
-            <div className="border-l-4 border-purple-600 pl-4">
-              <h3 className="text-lg font-semibold">Bradford Grammar School</h3>
-              <p className="text-sm text-gray-600">Secondary Education • Sep 2011 - Jul 2021</p>
-              <p className="mt-2 text-sm">
-                Grade: 11 9s, 1 A* (2018)
-              </p>
-            </div>
-            <div className="border-l-4 border-purple-600 pl-4">
-              <h3 className="text-lg font-semibold">Junior Royal Northern College Of Music</h3>
-              <p className="text-sm text-gray-600">2018 - 2021</p>
-              <p className="mt-2 text-sm">
-                DipABRSM Piano (Distinction) <br />
-                Grade 8 Piano, Oboe, Organ and Violin (All Distinctions + Merit)
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="skills" className="mb-16 scroll-mt-20">
-          <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Technical Skills</h2>
-          <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2">
-            {['Haskell', 'Kotlin', 'SQL', 'Scala', 'Git', 'Unix', 'C#', 'C', 'Java', 'Python', 'Prolog', 'Lua', 'Unity VCS', 'Docker', 'HTML', 'CSS', 'JavaScript', 'Vercel', 'Firebase'].map((skill) => (
-              <div key={skill} className="bg-white p-2 rounded-lg shadow-sm border border-gray-100 hover:border-purple-200 transition-colors font-light text-sm">
-                {skill}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <h2 className="font-poppins text-3xl font-bold mb-8 text-purple-600 tracking-tight">Creative Skills</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100 hover:border-purple-200 transition-colors">
-              <h3 className="font-poppins font-semibold mb-1.5 text-lg">Video Production</h3>
-              <p className="font-light text-sm">YouTube (Vlogging): Premiere Pro</p>
-            </div>
-            <div className="bg-white p-3 rounded-lg shadow-sm border border-gray-100 hover:border-purple-200 transition-colors">
-              <h3 className="font-poppins font-semibold mb-1.5 text-lg">Animation & Graphics</h3>
-              <p className="font-light text-sm">Animation: After Effects</p>
-              <p className="font-light text-sm">Digital Art: Photoshop</p>
-              <p className="font-light text-sm">3D-modelling: Blender</p>
-              <p className="font-light text-sm">Shaders: GLSL, Shaderlab</p>
-            </div>
-          </div>
-        </section>
+        </div>
       </div>
     </main>
   );
