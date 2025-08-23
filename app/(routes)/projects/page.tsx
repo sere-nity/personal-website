@@ -18,18 +18,13 @@ export default function ProjectsPage() {
     technical: [
       {
         title: 'PintOS',
-        description: 'operating system framework for x86 architecture',
+        description: 'Operating system framework for x86 architecture',
         link: 'https://github.com/sere-nity/pintos-os'
       },
       {
         title: 'AI Knowledge Graph',
-        description: 'turns your documents into knowledge graphs',
+        description: 'Turns your documents into knowledge graphs',
         link: '/projects/ai-knowledge-graph'
-      },
-      {
-        title: 'High Altitude Ballooning',
-        description: 'built and launched a balloon into space with a team',
-        link: '/projects/high-altitude-ballooning'
       },
       {
         title: 'EventHive',
@@ -38,15 +33,20 @@ export default function ProjectsPage() {
       },
       {
         title: 'WACC Compiler',
-        description: 'translates WACC language into machine code',
+        description: 'Translates WACC language into machine code',
         link: 'https://github.com/sere-nity/wacc-compiler'
       }
     ],
     'in-between': [
       {
         title: 'YAO - farming simulator',
-        description: 'Video demo. heavily inspired by Stardew Valley',
+        description: 'Video demo. Heavily inspired by Stardew Valley',
         link: 'https://drive.google.com/file/d/1ybGPPaTccY4FtovreXkKF-9IoTbwN6gq/view?usp=drive_link'
+      },
+      {
+        title: 'High Altitude Ballooning',
+        description: 'Built and launched a balloon into space with a team',
+        link: 'https://www.youtube.com/watch?v=BC5vjrGRdFc&ab_channel=BlakeMorris'
       },
       {
         title: 'Living Painting',
@@ -72,12 +72,12 @@ export default function ProjectsPage() {
       },
       {
         title: 'Orchestral Soundtrack Composition',
-        description: 'wanted to create something that sounded epic',
+        description: 'Wanted to create something that sounded epic',
         link: 'https://drive.google.com/file/d/19vBm2rWjwQzJRwYdlm7fxvEyWgigipyr/view?usp=sharing'
       },
       {
         title: 'Lifestyle Vlog',
-        description: 'loFI and matcha',
+        description: 'LoFI and matcha',
         link: 'https://www.youtube.com/watch?v=DXpwICJnNbc&ab_channel=SereneLiu'
       }
     ]
@@ -110,12 +110,6 @@ export default function ProjectsPage() {
               </div>
             </nav>
             <div className="text-right">
-              <div className="text-gray-500 text-[16px]">
-                <Link href="/projects/camellia" className="hover:text-gray-700">Camellia</Link>
-              </div>
-              <div className="text-gray-500 text-[16px]">
-                <Link href="/projects/branching-narrative" className="hover:text-gray-700">Dynamic Storytelling</Link>
-              </div>
             </div>
           </div>
         </div>

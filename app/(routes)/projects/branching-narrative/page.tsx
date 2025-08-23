@@ -30,12 +30,6 @@ export default function BranchingNarrativePage() {
               </div>
             </nav>
             <div className="text-right">
-              <div className="text-gray-500 text-[16px]">
-                <Link href="/projects/camellia" className="hover:text-gray-700">Camellia</Link>
-              </div>
-              <div className="text-gray-500 text-[16px]">
-                <Link href="/projects/branching-narrative" className="hover:text-gray-700">Dynamic Storytelling</Link>
-              </div>
             </div>
           </div>
         </div>

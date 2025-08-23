@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type ContentType = 'contact' | 'education' | 'experiences' | 'skills';
 
@@ -104,12 +105,6 @@ export default function Home() {
               </div>
             </nav>
             <div className="text-right">
-              <div className="text-gray-500 text-[16px]">
-                <Link href="/projects/camellia" className="hover:text-gray-700">Camellia</Link>
-              </div>
-              <div className="text-gray-500 text-[16px]">
-                <Link href="/projects/branching-narrative" className="hover:text-gray-700">Dynamic Storytelling</Link>
-              </div>
             </div>
           </div>
         </div>
@@ -168,6 +163,15 @@ export default function Home() {
               <p>
                 Above all, I hope what I create means something to someone.
               </p>
+              <div className="mt-6 -ml-2">
+                <Image
+                  src="/images/signature.webp"
+                  alt="Signature"
+                  width={100}
+                  height={50}
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
