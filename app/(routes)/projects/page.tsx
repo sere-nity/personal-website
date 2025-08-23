@@ -22,9 +22,9 @@ export default function ProjectsPage() {
         link: 'https://github.com/sere-nity/pintos-os'
       },
       {
-        title: 'AI Knowledge Graph',
+        title: 'Knowledge Graph Visualiser',
         description: 'Turns your documents into knowledge graphs',
-        link: '/projects/ai-knowledge-graph'
+        link: 'https://github.com/sere-nity/KGVisualiser'
       },
       {
         title: 'EventHive',
