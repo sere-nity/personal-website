@@ -3,11 +3,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { AudioLink } from '@/components/common/AudioLink';
+import { useAudio } from '@/lib/useAudio';
 
 type ContentType = 'contact' | 'education' | 'experiences' | 'skills';
 
 export default function Home() {
   const [selectedContent, setSelectedContent] = useState<ContentType>('contact');
+  const { playClickSound } = useAudio();
 
   const contentData = {
     contact: {
@@ -101,7 +104,7 @@ export default function Home() {
                 </button>
               </div>
               <div className="text-black text-[16px]">
-                <Link href="/projects" className="hover:text-gray-700">Projects</Link>
+                <AudioLink href="/projects" className="hover:text-gray-700">Projects</AudioLink>
               </div>
             </nav>
             <div className="text-right">
@@ -131,17 +134,20 @@ export default function Home() {
               </p>
               <p>
                 I've experimented with many mediums; video games, videos, music, writing and of course, software. You can see the results{' '}
-                <Link
+                <AudioLink
                   href="/projects"
                   className="underline hover:no-underline text-black"
                 >
                   here
-                </Link>
+                </AudioLink>
               </p>
               <p>
                 I'm privileged to have an incredible{' '}
                 <button
-                  onClick={() => handleContentClick('education')}
+                  onClick={() => {
+                    playClickSound();
+                    handleContentClick('education');
+                  }}
                   className={`underline hover:no-underline ${
                     selectedContent === 'education' ? 'text-gray-500' : 'text-black'
                   }`}
@@ -150,7 +156,10 @@ export default function Home() {
                 </button>
                 , as well as{' '}
                 <button
-                  onClick={() => handleContentClick('experiences')}
+                  onClick={() => {
+                    playClickSound();
+                    handleContentClick('experiences');
+                  }}
                   className={`underline hover:no-underline ${
                     selectedContent === 'experiences' ? 'text-gray-500' : 'text-black'
                   }`}

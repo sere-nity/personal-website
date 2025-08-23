@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { AudioLink } from '@/components/common/AudioLink';
+import { useAudio } from '@/lib/useAudio';
 
 type ProjectCategory = 'technical' | 'in-between' | 'creative';
 
@@ -13,6 +15,7 @@ interface Project {
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>('technical');
+  const { playClickSound } = useAudio();
 
   const projectData = {
     technical: [
@@ -88,9 +91,9 @@ export default function ProjectsPage() {
       <div className="max-w-4xl mx-auto px-8 py-12">
         {/* Name */}
         <h1 className="text-[62px] mb-2">
-          <Link href="/" className="hover:text-gray-700">
+          <AudioLink href="/" className="hover:text-gray-700">
             Serene Liu
-          </Link>
+          </AudioLink>
         </h1>
         <hr className="border-gray-300 mb-4" />
         
@@ -103,10 +106,10 @@ export default function ProjectsPage() {
           <div className="flex justify-between items-start">
             <nav className="text-left">
               <div className="text-gray-500 text-[16px]">
-                <Link href="/" className="hover:text-gray-700">About</Link>
+                <AudioLink href="/" className="hover:text-gray-700">About</AudioLink>
               </div>
               <div className="text-black text-[16px]">
-                <Link href="/projects" className="hover:text-gray-700">Projects</Link>
+                <AudioLink href="/projects" className="hover:text-gray-700">Projects</AudioLink>
               </div>
             </nav>
             <div className="text-right">
@@ -131,7 +134,10 @@ export default function ProjectsPage() {
                 <div className="relative">
                   <div className="absolute left-0 top-1/2 w-4 h-px bg-gray-300 transform -translate-x-full"></div>
                   <button
-                    onClick={() => setSelectedCategory('technical')}
+                    onClick={() => {
+                      playClickSound();
+                      setSelectedCategory('technical');
+                    }}
                     className={`text-left underline ${
                       selectedCategory === 'technical' ? 'text-black' : 'text-gray-500'
                     }`}
@@ -143,7 +149,10 @@ export default function ProjectsPage() {
                 <div className="relative">
                   <div className="absolute left-0 top-1/2 w-4 h-px bg-gray-300 transform -translate-x-full"></div>
                   <button
-                    onClick={() => setSelectedCategory('in-between')}
+                    onClick={() => {
+                      playClickSound();
+                      setSelectedCategory('in-between');
+                    }}
                     className={`text-left underline ${
                       selectedCategory === 'in-between' ? 'text-black' : 'text-gray-500'
                     }`}
@@ -156,7 +165,10 @@ export default function ProjectsPage() {
                 <div className="relative">
                   <div className="absolute left-0 top-1/2 w-4 h-px bg-gray-300 transform -translate-x-full"></div>
                   <button
-                    onClick={() => setSelectedCategory('creative')}
+                    onClick={() => {
+                      playClickSound();
+                      setSelectedCategory('creative');
+                    }}
                     className={`text-left underline ${
                       selectedCategory === 'creative' ? 'text-black' : 'text-gray-500'
                     }`}
@@ -179,9 +191,9 @@ export default function ProjectsPage() {
                       {project.title}
                     </a>
                   ) : (
-                    <Link href={project.link} className="underline hover:text-gray-700">
+                    <AudioLink href={project.link} className="underline hover:text-gray-700">
                       {project.title}
-                    </Link>
+                    </AudioLink>
                   )}
                   <div className="text-gray-500 italic">{project.description}</div>
                 </div>

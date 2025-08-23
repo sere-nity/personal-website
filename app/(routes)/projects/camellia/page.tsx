@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { AudioLink } from '@/components/common/AudioLink';
 
 export default function CamelliaPage() {
   return (
@@ -8,9 +9,9 @@ export default function CamelliaPage() {
       <div className="max-w-4xl mx-auto px-8 py-12">
         {/* Name */}
         <h1 className="text-[62px] mb-2">
-          <Link href="/" className="hover:text-gray-700">
+          <AudioLink href="/" className="hover:text-gray-700">
             Serene Liu
-          </Link>
+          </AudioLink>
         </h1>
         <hr className="border-gray-300 mb-4" />
         
@@ -23,10 +24,10 @@ export default function CamelliaPage() {
           <div className="flex justify-between items-start">
             <nav className="text-left">
               <div className="text-gray-500 text-[16px]">
-                <Link href="/" className="hover:text-gray-700">About</Link>
+                <AudioLink href="/" className="hover:text-gray-700">About</AudioLink>
               </div>
               <div className="text-black text-[16px]">
-                <Link href="/projects" className="hover:text-gray-700">Projects</Link>
+                <AudioLink href="/projects" className="hover:text-gray-700">Projects</AudioLink>
               </div>
             </nav>
             <div className="text-right">
