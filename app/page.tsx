@@ -108,6 +108,26 @@ export default function Home() {
               </div>
             </nav>
             <div className="text-right">
+              <div className="text-gray-500 text-[16px]">
+                <a 
+                  href="https://www.linkedin.com/in/serene-q-liu/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-black"
+                >
+                  LinkedIn
+                </a>
+              </div>
+              <div className="text-gray-500 text-[16px]">
+                <a 
+                  href="https://github.com/sere-nity" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-black"
+                >
+                  GitHub
+                </a>
+              </div>
             </div>
           </div>
         </div>
