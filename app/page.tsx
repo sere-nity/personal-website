@@ -15,7 +15,7 @@ export default function Home() {
   const contentData = {
     contact: {
       title: 'Contact',
-      content: 'serene@gliahq.com'
+      content: 'serene6197@gmail.com'
     },
     education: {
       title: 'Education',
@@ -45,7 +45,7 @@ export default function Home() {
       content: (
         <div className="space-y-4">
           <div>
-            <div className="text-black">Glia HQ <span className="text-gray-500">(Present)</span></div>
+            <div className="text-black">Glia HQ <span className="text-gray-500">(2025)</span></div>
             <div className="text-gray-600 italic">Co-Founder & CTO</div>
           </div>
           <div>
