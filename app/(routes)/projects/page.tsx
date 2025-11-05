@@ -54,12 +54,12 @@ export default function ProjectsPage() {
       {
         title: 'Living Painting',
         description: 'Painting that responds to dynamic lighting in real time.',
-        link: 'https://app.milanote.com/1SRXzL1IgMiN95?p=GGM6yLSOb1h'
+        link: 'https://github.com/sere-nity/living-painting'
       },
       {
         title: 'Branching Narrative System',
         description: 'Disco Elysium\'s narrative system technically speaking.',
-        link: '/projects/branching-narrative'
+        link: 'https://github.com/sere-nity/branching-narrative-system'
       },
       {
         title: 'Animated Educational Video',
