@@ -46,7 +46,7 @@ export default function Home() {
         <div className="space-y-4">
           <div>
             <div className="text-black">Glia HQ <span className="text-gray-500">(2025)</span></div>
-            <div className="text-gray-600 italic">Co-Founder & CTO</div>
+            <div className="text-gray-600 italic">Founding Engineer</div>
           </div>
           <div>
             <div className="text-black">DoCSoc <span className="text-gray-500">(2024)</span></div>
