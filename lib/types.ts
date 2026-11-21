@@ -6,10 +6,11 @@ export interface BlogPost {
       description: string;
       tags: string[];
       image?: string;
+      series?: string;
     };
     content: React.ReactNode;
   }
-  
+
   export interface Project {
     slug: string;
     frontmatter: {
