@@ -9,7 +9,7 @@ export interface BlogPost {
     };
     content: React.ReactNode;
   }
-
+  
   export interface Project {
     slug: string;
     frontmatter: {
