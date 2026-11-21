@@ -4,8 +4,12 @@ import { getBlogPosts } from '@/lib/mdx';
 export default async function Home() {
   const posts = await getBlogPosts();
 
-  // Posts sharing a series are listed together under the series title
-  const groups: { series?: string; posts: typeof posts }[] = [];
+  // Posts sharing a series are listed together under the series title.
+  // Series here always show, in this order, even before they have posts.
+  const groups: { series?: string; posts: typeof posts }[] = [
+    'Things I have realised I dislike',
+    'Things I have realised I like',
+  ].map((series) => ({ series, posts: [] }));
   for (const post of posts) {
     const { series } = post.frontmatter;
     const group = series && groups.find((g) => g.series === series);
@@ -43,6 +47,7 @@ export default async function Home() {
                         </AudioLink>
                       </li>
                     ))}
+                    {group.posts.length === 0 && <li className="text-gray-500">[placeholder]</li>}
                   </ul>
                 </div>
               ))}
