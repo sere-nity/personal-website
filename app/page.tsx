@@ -21,7 +21,7 @@ export default async function Home() {
 
           {/* Right Column - Blog */}
           <div>
-            <div className="text-gray-500 text-[20px] mb-2">interesting learnings . observations</div>
+            <div className="text-gray-500 text-[20px] mb-2">some observations</div>
             <ul className="space-y-2 text-[16px]">
               {posts.map((post) => (
                 <li key={post.slug}>
