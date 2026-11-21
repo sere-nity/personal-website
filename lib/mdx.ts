@@ -37,12 +37,12 @@ export async function getBlogPostBySlug(slug: string) {
   const fileContents = fs.readFileSync(filePath, 'utf8');
   
   const { data, content } = matter(fileContents);
-  
+
   const { content: compiledContent } = await compileMDX({
     source: content,
     options: { parseFrontmatter: true }
   });
-  
+
   return {
     slug,
     frontmatter: data as BlogPost['frontmatter'],
