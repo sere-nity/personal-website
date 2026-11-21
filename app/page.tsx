@@ -32,9 +32,9 @@ export default async function Home() {
             <div className="text-black text-[16px]">serene6197@gmail.com</div>
           </div>
 
-          {/* Right Column - Blog */}
+          {/* Right Column - My Unfiltered Thoughts */}
           <div>
-            <div className="text-gray-500 text-[20px] mb-2">Blog</div>
+            <div className="text-gray-500 text-[20px] mb-2">My Unfiltered Thoughts</div>
             <div className="space-y-4 text-[16px]">
               {groups.map((group) => (
                 <div key={group.series ?? group.posts[0].slug}>
